@@ -105,10 +105,10 @@ export default function PublicEventPage() {
       {/* Main Hero Banner */}
       <div className="relative w-full h-72 sm:h-96 bg-slate-900 overflow-hidden">
         <img
-          src={event.cover_image_url || '/images/obhur-sunset-yacht-dj.jpg'}
+          src={getAssetPath(event.cover_image_url || '/images/obhur-sunset-yacht-dj.jpg')}
           alt={title}
           onError={(e) => {
-            e.currentTarget.src = '/images/obhur-sunset-yacht-dj.jpg';
+            e.currentTarget.src = getAssetPath('/images/obhur-sunset-yacht-dj.jpg');
           }}
           className="w-full h-full object-cover opacity-60"
         />

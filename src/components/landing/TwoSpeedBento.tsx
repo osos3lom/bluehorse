@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { getAssetPath } from '../../lib/assets';
 import {
   Zap,
   ShieldAlert,
@@ -127,7 +128,7 @@ export function TwoSpeedBento({ locale = 'en' }: TwoSpeedBentoProps) {
                 >
                   <div className="relative h-40 w-full overflow-hidden bg-slate-900">
                     <img
-                      src={product.coverImage}
+                      src={getAssetPath(product.coverImage)}
                       alt={product.title[isArabic ? 'ar' : 'en']}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -206,7 +207,7 @@ export function TwoSpeedBento({ locale = 'en' }: TwoSpeedBentoProps) {
                 <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                   <div className="relative w-full sm:w-28 h-24 rounded-xl overflow-hidden shrink-0 bg-slate-800">
                     <img
-                      src={property.coverImage}
+                      src={getAssetPath(property.coverImage)}
                       alt={property.title[isArabic ? 'ar' : 'en']}
                       className="w-full h-full object-cover"
                     />

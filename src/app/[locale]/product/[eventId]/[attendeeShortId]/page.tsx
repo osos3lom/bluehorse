@@ -8,6 +8,7 @@ import { useData } from '../../../../../context/DataContext';
 import { LanguageSwitcher } from '../../../../../components/common/LanguageSwitcher';
 import { Badge } from '../../../../../components/common/Badge';
 import { getLocalizedText } from '../../../../../lib/localeUtils';
+import { getAssetPath } from '../../../../../lib/assets';
 import {
   QrCode,
   Calendar,
@@ -67,7 +68,7 @@ export default function AttendeeProductPassPage() {
         {/* Cover Banner */}
         <div className="relative h-36 bg-gradient-to-tr from-blue-700 to-indigo-600 overflow-hidden">
           <img
-            src={event.cover_image_url}
+            src={getAssetPath(event.cover_image_url)}
             alt={eventTitle}
             className="w-full h-full object-cover opacity-40"
           />

@@ -7,6 +7,7 @@ import { useData } from '../../../context/DataContext';
 import { StatCard } from '../../../components/common/StatCard';
 import { Badge } from '../../../components/common/Badge';
 import { getLocalizedText } from '../../../lib/localeUtils';
+import { getAssetPath } from '../../../lib/assets';
 import {
   ShieldAlert,
   Building2,
@@ -103,7 +104,7 @@ export default function PlatformAdminPage() {
               <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
                 <td className="py-3.5 px-4 font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <img
-                    src={data.organization.logo_url}
+                    src={getAssetPath(data.organization.logo_url)}
                     alt={orgName}
                     className="w-7 h-7 rounded-lg object-cover"
                   />

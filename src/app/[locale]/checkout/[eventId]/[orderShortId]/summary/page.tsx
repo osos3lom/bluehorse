@@ -122,7 +122,7 @@ export default function OrderSummaryPage() {
         <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div className="flex items-center gap-4">
             <img
-              src={event.cover_image_url}
+              src={getAssetPath(event.cover_image_url)}
               alt={eventTitle}
               className="w-16 h-16 rounded-2xl object-cover"
             />

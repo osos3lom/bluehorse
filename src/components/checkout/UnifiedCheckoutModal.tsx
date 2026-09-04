@@ -610,7 +610,7 @@ export function UnifiedCheckoutModal({
                       >
                         <div className="flex items-center gap-3.5">
                           <img
-                            src={item.coverImage}
+                            src={getAssetPath(item.coverImage)}
                             alt={item.title[isArabic ? 'ar' : 'en']}
                             className="w-16 h-16 rounded-xl object-cover shrink-0 border border-white/10"
                           />
@@ -1127,12 +1127,12 @@ export function UnifiedCheckoutModal({
                 </span>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5">
                   {[
-                    { id: 'mada', label: 'Mada', logo: '/payments/Mada_Logo.png' },
-                    { id: 'apple_pay', label: 'Apple Pay', logo: '/payments/Apple_Pay.png' },
-                    { id: 'stc_pay', label: 'STC Pay', logo: '/payments/Stc_pay.png' },
-                    { id: 'credit_card', label: 'Visa / MC', logo: '/payments/Visa_Logo.png' },
-                    { id: 'tamara', label: 'Tamara', logo: '/payments/taamara.png' },
-                    { id: 'tabby', label: 'Tabby', logo: '/payments/tabby-logo.png' },
+                    { id: 'mada', label: 'Mada', logo: getAssetPath('/payments/Mada_Logo.png') },
+                    { id: 'apple_pay', label: 'Apple Pay', logo: getAssetPath('/payments/Apple_Pay.png') },
+                    { id: 'stc_pay', label: 'STC Pay', logo: getAssetPath('/payments/Stc_pay.png') },
+                    { id: 'credit_card', label: 'Visa / MC', logo: getAssetPath('/payments/Visa_Logo.png') },
+                    { id: 'tamara', label: 'Tamara', logo: getAssetPath('/payments/taamara.png') },
+                    { id: 'tabby', label: 'Tabby', logo: getAssetPath('/payments/tabby-logo.png') },
                   ].map((method) => {
                     const isSelected = state.paymentMethod === method.id;
                     return (
@@ -1148,7 +1148,7 @@ export function UnifiedCheckoutModal({
                       >
                         <div className="h-6 flex items-center justify-center">
                           <img
-                            src={method.logo}
+                            src={getAssetPath(method.logo)}
                             alt={method.label}
                             className="max-h-5 max-w-full object-contain filter brightness-105"
                             onError={(e) => {

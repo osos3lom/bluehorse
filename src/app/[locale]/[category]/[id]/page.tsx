@@ -13,6 +13,7 @@ import { EventTierPurchase } from '../../../../components/detail/EventTierPurcha
 import { DayPassPurchase } from '../../../../components/detail/DayPassPurchase';
 import { SeaVoyagePurchase } from '../../../../components/detail/SeaVoyagePurchase';
 import { RealEstatePurchase } from '../../../../components/detail/RealEstatePurchase';
+import { getAssetPath } from '../../../../lib/assets';
 
 interface PageProps {
   params: Promise<{
@@ -93,7 +94,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-3xl overflow-hidden border border-white/10 bg-slate-900 shadow-xl">
           <div className="md:col-span-2 relative h-80 sm:h-96 md:h-[460px]">
             <img
-              src={product.coverImage}
+              src={getAssetPath(product.coverImage)}
               alt={product.title[isArabic ? 'ar' : 'en']}
               className="w-full h-full object-cover"
             />
@@ -115,7 +116,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
             {product.galleryImages.slice(0, 2).map((imgUrl, idx) => (
               <div key={idx} className="relative flex-1 overflow-hidden">
                 <img
-                  src={imgUrl}
+                  src={getAssetPath(imgUrl)}
                   alt="Gallery"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />

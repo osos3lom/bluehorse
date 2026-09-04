@@ -1,4 +1,5 @@
 import { LuxuryProduct } from '../types/booking';
+import { getAssetPath } from '../lib/assets';
 
 export const luxuryCatalog: LuxuryProduct[] = [
   // ==========================================
@@ -795,7 +796,7 @@ export const luxuryCatalog: LuxuryProduct[] = [
       ar: 'شعاب بياضة (الانطلاق من مرسى الأحلام)',
     },
     marinaOrArea: 'north_obhur',
-    coverImage: '/images/bayadha.png',
+    coverImage: getAssetPath('/images/bayadha.png'),
     galleryImages: [
       'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1200&auto=format&fit=crop&q=80',
     ],
@@ -860,9 +861,9 @@ export const luxuryCatalog: LuxuryProduct[] = [
       ar: 'مارينا نادي اليخوت، أبحر',
     },  
     marinaOrArea: 'jeddah_yacht_club',
-    coverImage: '/images/obhur-sunset-yacht-dj.jpg',
+    coverImage: getAssetPath('/images/obhur-sunset-yacht-dj.jpg'),
     galleryImages: [
-      '/images/azimut-yacht-main.jpg',
+      getAssetPath('/images/azimut-yacht-main.jpg'),
     ],
     basePrice: 2400,
     currency: 'SAR',
@@ -928,9 +929,9 @@ export const luxuryCatalog: LuxuryProduct[] = [
       ar: 'شاطئ ونادي أويا، أبحر الشمالية',
     },
     marinaOrArea: 'north_obhur',
-    coverImage: '/images/oia-beach-cabana-gallery.jpg',
+    coverImage: getAssetPath('/images/oia-beach-cabana-gallery.jpg'),
     galleryImages: [
-      '/images/oia-beach-sunbed-cover.jpg',
+      getAssetPath('/images/oia-beach-sunbed-cover.jpg'),
     ],
     basePrice: 1200,
     currency: 'SAR',
@@ -995,7 +996,7 @@ export const luxuryCatalog: LuxuryProduct[] = [
       ar: 'في جميع مرافق ومنتجعات البحر الأحمر، جدة',
     },
     marinaOrArea: 'south_obhur',
-    coverImage: '/images/azimut-yacht-interior.jpg',
+    coverImage: getAssetPath('/images/azimut-yacht-interior.jpg'),
     galleryImages: [
       'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&auto=format&fit=crop&q=80',
     ],

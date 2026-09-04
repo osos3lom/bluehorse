@@ -134,20 +134,20 @@ export function LuxuryFooter({ locale = 'en' }: { locale?: string }) {
           </h4>
           <div className="flex flex-wrap items-center gap-2 mb-4">
             {[
-              { name: 'Mada', src: '/payments/Mada_Logo.png' },
-              { name: 'Apple Pay', src: '/payments/Apple_Pay.png' },
-              { name: 'Visa', src: '/payments/Visa_Logo.png' },
-              { name: 'Mastercard', src: '/payments/Mastercard-Logo.png' },
-              { name: 'STC Pay', src: '/payments/Stc_pay.png' },
-              { name: 'Tamara', src: '/payments/taamara.png' },
-              { name: 'Tabby', src: '/payments/tabby-logo.png' },
+              { name: 'Mada', src: getAssetPath('/payments/Mada_Logo.png') },
+              { name: 'Apple Pay', src: getAssetPath('/payments/Apple_Pay.png') },
+              { name: 'Visa', src: getAssetPath('/payments/Visa_Logo.png') },
+              { name: 'Mastercard', src: getAssetPath('/payments/Mastercard-Logo.png') },
+              { name: 'STC Pay', src: getAssetPath('/payments/Stc_pay.png') },
+              { name: 'Tamara', src: getAssetPath('/payments/taamara.png') },
+              { name: 'Tabby', src: getAssetPath('/payments/tabby-logo.png') },
             ].map((p) => (
               <div
                 key={p.name}
                 className="h-8 px-2.5 py-1 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex items-center justify-center transition-transform hover:scale-105"
                 title={p.name}
               >
-                <img src={p.src} alt={p.name} className="h-4.5 max-w-[52px] object-contain" />
+                <img src={getAssetPath(p.src)} alt={p.name} className="h-4.5 max-w-[52px] object-contain" />
               </div>
             ))}
           </div>

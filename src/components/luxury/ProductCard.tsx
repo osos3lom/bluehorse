@@ -7,6 +7,7 @@ import { LuxuryProduct, ServiceCategory } from '../../types/booking';
 import { CapacityBadge } from './CapacityBadge';
 import { PrivacyTag } from './PrivacyTag';
 import { PriceDisplay } from './PriceDisplay';
+import { getAssetPath } from '../../lib/assets';
 
 interface ProductCardProps {
   product: LuxuryProduct;
@@ -55,7 +56,7 @@ export function ProductCard({ product, locale = 'en' }: ProductCardProps) {
       {/* Cover Image Container */}
       <div className="relative h-60 w-full overflow-hidden bg-slate-900/10">
         <img
-          src={product.coverImage}
+          src={getAssetPath(product.coverImage)}
           alt={product.title[isArabic ? 'ar' : 'en']}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
