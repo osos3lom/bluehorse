@@ -1,0 +1,449 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-outfit), 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-arabic: var(--font-bukra), '29LT Bukra', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-heading: var(--font-outfit), 'Outfit', sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-canvas: var(--canvas);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-alt: var(--primary-alt);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-alt: var(--accent-alt);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-soft: var(--destructive-soft);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-soft: var(--success-soft);
+  --color-success-money: #00b894;
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-soft: var(--warning-soft);
+
+  --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
+  --color-midnight: var(--midnight);
+  --color-midnight-deep: var(--midnight-deep);
+  --color-cyan-electric: var(--cyan-electric);
+  --color-desert-sand: var(--desert-sand);
+  --color-desert-sand-soft: var(--desert-sand-soft);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 7px;
+  --radius-lg: 10px;
+  --radius-card: 12px;
+  --radius-xl: 15px;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 4px 14px rgba(7, 107, 154, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-topbar: 0 4px 20px rgba(7, 18, 33, 0.18);
+  --shadow-floating: 0 2px 10px rgba(6, 182, 212, 0.20);
+  --shadow-ticket: 0 30px 45px rgba(3, 15, 29, 0.45), 0 4px 12px rgba(3, 15, 29, 0.30);
+}
+
+:root {
+  /* Blue Horse - Arabian Daylight Light Mode */
+  --background: #f4f7fc;              /* Crisp coastal alabaster */
+  --canvas: #f4f7fc;
+  --foreground: #0b132b;              /* Deep Midnight Blue text */
+
+  --card: #ffffff;                    /* Pure crisp white card */
+  --card-foreground: #0b132b;
+
+  --popover: #ffffff;
+  --popover-foreground: #0b132b;
+
+  /* Blue Horse Midnight Base System */
+  --midnight: #0b132b;
+  --midnight-deep: #060b18;
+  --ink: #0b132b;
+  --ink-deep: #060b18;
+
+  /* Electric Cyan & Ocean Azure */
+  --cyan-electric: #00b4d8;           /* Calibrated Electric Cyan for light mode */
+  --primary: #0b132b;                 /* Midnight navy primary action */
+  --primary-alt: #0099b8;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eaf1fa;               /* Soft blue-gray surface */
+  --secondary-foreground: #0b132b;
+
+  --muted: #e2eaf5;
+  --muted-foreground: #475569;
+
+  /* Desert Sand & Gold Accents */
+  --desert-sand: #c98e18;             /* Rich desert amber for light surfaces */
+  --desert-sand-soft: rgba(201, 142, 24, 0.12);
+  --accent: #00b4d8;
+  --accent-alt: #c98e18;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(0, 180, 216, 0.10);
+
+  /* Semantic Status Tokens */
+  --success: #059669;
+  --success-foreground: #ffffff;
+  --success-soft: rgba(5, 150, 105, 0.10);
+
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --warning-soft: rgba(217, 119, 6, 0.10);
+
+  --destructive: #e11d48;
+  --destructive-foreground: #ffffff;
+  --destructive-soft: rgba(225, 29, 72, 0.10);
+
+  /* Borders, Inputs & Glow Rings */
+  --border: rgba(11, 19, 43, 0.10);
+  --border-subtle: #e2eaf4;
+  --input: #dce6f2;
+  --ring: rgba(0, 180, 216, 0.40);
+
+  --radius: 0.75rem;
+  --scrollbar-thumb: #cbd5e1;
+
+  /* Luxury Brand Gradients - Light (Arabian Daylight) */
+  --gradient-primary: linear-gradient(135deg, #0b132b 0%, #12335c 45%, #076b9a 80%, #00b4d8 100%);
+  --gradient-gold: linear-gradient(135deg, #fff3d6 0%, #f5d982 24%, #e6af2e 58%, #c98e18 82%, #a3720f 100%);
+  --gradient-luxury: linear-gradient(120deg, #0b132b 0%, #0d3b66 38%, #00b4d8 68%, #e6af2e 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(234, 241, 250, 0.55) 100%);
+}
+
+.dark {
+  /* Blue Horse - Electric Midnight Dark Mode */
+  --background: #0b132b;              /* Signature Midnight Blue */
+  --canvas: #0b132b;
+  --foreground: #ffffff;              /* Stark White */
+
+  --card: #121c38;                    /* Elevated Navy Slate */
+  --card-foreground: #ffffff;
+
+  --popover: #121c38;
+  --popover-foreground: #ffffff;
+
+  /* Blue Horse Midnight Base System */
+  --midnight: #0b132b;
+  --midnight-deep: #060b18;
+  --ink: #0b132b;
+  --ink-deep: #060b18;
+
+  /* Electric Cyan Primary (#00E5FF) */
+  --cyan-electric: #00e5ff;
+  --primary: #00e5ff;                 /* Neon Electric Cyan */
+  --primary-alt: #38bdf8;
+  --primary-foreground: #060b18;      /* High contrast dark on cyan */
+
+  --secondary: #1c2541;               /* Deep Navy secondary */
+  --secondary-foreground: #00e5ff;
+
+  --muted: #162244;
+  --muted-foreground: #94a3b8;
+
+  /* Desert Sand (#E6AF2E) & Starlight Accents */
+  --desert-sand: #e6af2e;             /* Desert Sand gold */
+  --desert-sand-soft: rgba(230, 175, 46, 0.16);
+  --accent: #00e5ff;
+  --accent-alt: #e6af2e;
+  --accent-foreground: #060b18;
+  --accent-soft: rgba(0, 229, 255, 0.16);
+
+  --success: #34d399;
+  --success-foreground: #060b18;
+  --success-soft: rgba(52, 211, 153, 0.18);
+
+  --warning: #e6af2e;
+  --warning-foreground: #060b18;
+  --warning-soft: rgba(230, 175, 46, 0.18);
+
+  --destructive: #f87171;
+  --destructive-foreground: #060b18;
+  --destructive-soft: rgba(248, 113, 113, 0.18);
+
+  --border: rgba(0, 229, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --input: rgba(0, 229, 255, 0.14);
+  --ring: rgba(0, 229, 255, 0.45);
+  --scrollbar-thumb: #1c2541;
+
+  /* Luxury Brand Gradients - Dark (Electric Midnight) */
+  --gradient-primary: linear-gradient(135deg, #00e5ff 0%, #38bdf8 45%, #0077b6 100%);
+  --gradient-gold: linear-gradient(135deg, #fff3d6 0%, #f5d982 24%, #e6af2e 55%, #c98e18 82%, #8a5a0d 100%);
+  --gradient-luxury: linear-gradient(120deg, #060b18 0%, #0b132b 32%, #00b4d8 66%, #e6af2e 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(18, 28, 56, 0.9) 0%, rgba(11, 19, 43, 0.55) 100%);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    box-sizing: border-box;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0.2px;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  [dir="rtl"], [lang="ar"], [dir="rtl"] body, [lang="ar"] body {
+    font-family: var(--font-bukra), var(--font-outfit), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.3px;
+  }
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+    letter-spacing: normal;
+  }
+}
+
+/* Blue Horse Brand Utility Classes */
+@layer utilities {
+  /* Electric Midnight Gradient */
+  .bg-gradient-midnight {
+    background-image: linear-gradient(135deg, #0b132b 0%, #121c38 60%, #1c2541 100%);
+  }
+
+  /* Electric Cyan Glow Gradient */
+  .bg-gradient-electric {
+    background-image: linear-gradient(135deg, #00e5ff 0%, #00b4d8 50%, #0077b6 100%);
+  }
+
+  /* Desert Sand Gold Gradient */
+  .bg-gradient-desert {
+    background-image: linear-gradient(135deg, #f5d982 0%, #e6af2e 60%, #c98e18 100%);
+  }
+
+  /* Theme-aware Luxury Brand Gradients - resolve differently in light vs dark */
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+
+  /* Signature sweep: Midnight Navy -> Ocean Cyan -> Desert Gold */
+  .bg-gradient-luxury {
+    background-image: var(--gradient-luxury);
+  }
+
+  .bg-gradient-surface {
+    background-image: var(--gradient-surface);
+  }
+
+  /* Foil-text treatments for headlines, wordmarks & stat highlights */
+  .text-gradient-primary {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-gold {
+    background-image: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-luxury {
+    background-image: var(--gradient-luxury);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Glow Effects */
+  .glow-cyan {
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.40);
+  }
+
+  .glow-cyan-subtle {
+    box-shadow: 0 4px 20px rgba(0, 229, 255, 0.18);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(230, 175, 46, 0.35);
+  }
+
+  /* Glassmorphism Card Panels */
+  .card-surface {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark .card-surface {
+    background-color: rgba(18, 28, 56, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+  }
+
+  .dark .card-surface:hover {
+    border-color: rgba(0, 229, 255, 0.45);
+    box-shadow: 0 10px 35px rgba(0, 229, 255, 0.12);
+  }
+}
+
+/* Maritime & Red Sea Custom Utility Classes */
+@layer utilities {
+  /* Jeddah Sunset Gradient: Coral to Warm Amber */
+  .bg-gradient-sunset {
+    background-image: linear-gradient(135deg, #f43f5e 0%, #f97316 50%, #facc15 100%);
+  }
+
+  /* Oceanic Glow Gradient: Deep Azure to Red Sea Cyan */
+  .bg-gradient-ocean {
+    background-image: linear-gradient(135deg, #076b9a 0%, #06b6d4 50%, #2dd4bf 100%);
+  }
+
+  /* Dark Sea Abyss to Cyan Glow */
+  .bg-gradient-ocean-dark {
+    background-image: linear-gradient(135deg, #071221 0%, #075985 60%, #06b6d4 100%);
+  }
+
+  /* Red Sea Coastal Horizon Header */
+  .bg-gradient-horizon {
+    background-image: linear-gradient(180deg, #0d1e34 0%, #071221 100%);
+  }
+
+  /* Luxury Coastal Glassmorphism Overlay */
+  .glass-panel {
+    background-color: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(14, 116, 144, 0.12);
+  }
+
+  .dark .glass-panel {
+    background-color: rgba(12, 26, 44, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    box-shadow: 0 4px 24px rgba(6, 182, 212, 0.06);
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+*:hover::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+/* Hi.Events & Maritime Keyframe Animations */
+@keyframes hi-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hi-float-ticket {
+  0%, 100% {
+    transform: rotate(2.5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(2.5deg) translateY(-8px);
+  }
+}
+
+@keyframes hi-stamp-in {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) scale(1.9);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-10deg) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-10deg) scale(1);
+  }
+}
+
+@keyframes hi-ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-hi-rise {
+  animation: hi-rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.animate-hi-float {
+  animation: hi-float-ticket 8s ease-in-out infinite;
+}
+
+.animate-hi-stamp {
+  animation: hi-stamp-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 1.2s both;
+}
+
+.animate-hi-ticker {
+  animation: hi-ticker-scroll 120s linear infinite;
+}
+
+/* Hi.Events Ticket Perforation Mask */
+.hi-ticket-mask {
+  -webkit-mask-image:
+    radial-gradient(circle 9px at calc(100% - 118px) 0, transparent 8px, #000 9px),
+    radial-gradient(circle 9px at calc(100% - 118px) 100%, transparent 8px, #000 9px);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(circle 9px at calc(100% - 118px) 0, transparent 8px, #000 9px),
+    radial-gradient(circle 9px at calc(100% - 118px) 100%, transparent 8px, #000 9px);
+  mask-composite: intersect;
+}
